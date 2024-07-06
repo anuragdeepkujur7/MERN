@@ -1,9 +1,13 @@
+require("dotenv").config();
+
 const express = require("express"); // to use express in our application
 const app = express(); // the power is express is stored in app
 
 const router=require("./router/auth-router");
+const connectDb= require("./utils/db");
 //. Mount the Router: To use the router in your main Express app, you can "mount " it
 //at a specific URL prefix
+app.use(express.json());
 app.use("/api/auth", router) //for using router
 
 // app.get("/",(req,res)=>{                              
@@ -19,10 +23,12 @@ the response (res).*/
 // });
 
 const PORT=5000;
-app.listen(PORT,()=>{
-    console.log( `server is running at port:${PORT}`);
-});
 
+connectDb().then(()=>{
+app.listen(PORT,()=>{
+    console.log( `server is runnin ppppp at port:${PORT}`);
+});
+});
 
 
 

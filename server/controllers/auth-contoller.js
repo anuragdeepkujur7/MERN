@@ -8,7 +8,7 @@ separating concerns and following the MVC (Model-View-Control Zer) design patter
 //*-----------
                                                  
 const home = async(req, res)=>{ //when we write async we must search for errors so write try and catch 
-try {
+try {   
         res.status(200).send("Welcome to world best mern series by thapa technical using router");
     } 
     catch (error) {
@@ -18,9 +18,10 @@ try {
 /*----- Registration Logic------*/
 const register=async (req, res) => {
     try {
-        res.status(200).send("welcome to registration page usning controllers ");
+        console.log(req.body); // jo data postman body me hoga wo show karega
+        res.status(200).send({message:req.body});
     } catch (error) {
-    res.status(400).send({msg:"page not found"} );
+    res.status(500).send({msg:"page not found"} );
     }
 } 
 

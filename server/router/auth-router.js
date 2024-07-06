@@ -20,7 +20,7 @@ router.route("/").get(home);
 // router.route("/register").get((req, res)=>{
 // -     res.status(200).send( "welcome to registration  page");
 // });
-router.route('/register').get(register);
+router.route('/register').post(register);
 
 
 module.exports= router;
