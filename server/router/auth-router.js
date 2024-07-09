@@ -8,19 +8,25 @@ organized and maintainable.*/
 is a complete middleware and routing system; for this reason, it is often referred to as a 'mini-app' .*/
 
 const express=require("express") ;
-const router=express.Router( ); 
-const {home,register} =require("../controllers/auth-contoller")
+const router=express.Router(); 
+const authControllers=require("../controllers/auth-contoller");
+
+const {signupSchema}=require("../Validator/auth-validator").default;
+const validate= require("../middlewares/validate-middleware"); 
+
+//const {home,register} =require("../controllers/auth-contoller") we can nwrite this way also
 
 /*router.get("/",(req,res) =>{
         res.status(200).send("Welcome to world best mern series by thapa technical using router");
 
-});*/
-router.route("/").get(home);
+});below is easy way*/ 
+router.route("/").get(authControllers.home);
 
 // router.route("/register").get((req, res)=>{
 // -     res.status(200).send( "welcome to registration  page");
-// });
-router.route('/register').post(register);
+// });                                                                                                                  
+router.route('/register').post(validate(signupSchema),authControllers.register);       // now  pass here signup schema
+router.route('/login').post(authControllers.login);
 
 
 module.exports= router;
