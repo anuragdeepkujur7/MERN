@@ -1,4 +1,3 @@
-export const Home=()=>{ 
-    
+export const Home = () => {
     return <h1>Hello Home Page</h1>;
-};
+  };
