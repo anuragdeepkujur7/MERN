@@ -1,4 +1,4 @@
-import { Analytics } from "../components/Analytics";
+//import { Analytics } from "../components/Analytics";
 
 export const Home = () => {
   return (
