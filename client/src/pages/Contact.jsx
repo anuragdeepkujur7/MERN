@@ -7,7 +7,7 @@ export const Contact = () => {
     message: "",
   });
 
-  // lets tackle our handleInput
+  // for handleInput
   const handleInput = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -18,7 +18,7 @@ export const Contact = () => {
     });
   };
 
-  // handle fomr getFormSubmissionInfo
+  // handle form getFormSubmissionInfo
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -42,7 +42,7 @@ export const Contact = () => {
 
           {/* contact form content actual  */}
           <section className="section-form">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>    {/*we make handelsubmit and handleinput in last*/} 
               <div>
                 <label htmlFor="username">username</label>
                 <input
@@ -70,7 +70,7 @@ export const Contact = () => {
               </div>
 
               {/* message box */}
-              
+
               <div>
                 <label htmlFor="message">message</label>
                 <textarea
