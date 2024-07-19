@@ -18,7 +18,7 @@ export const Register = () => {
 
       setUser({
         ...user,   //... is spread operator any old values will be reetained
-        [name]:value,  // [name] bcux name is dynamic
+        [name]:value,  // [name] bcux name is dynamic usernmae phone email..
       });
     };
 

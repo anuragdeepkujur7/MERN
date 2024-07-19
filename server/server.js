@@ -11,7 +11,7 @@ const errorMiddleware = require("./middlewares/error-middllware");
 //at a specific URL prefix
 app.use(express.json());
 app.use("/api/auth", authRouter); //for using router
-app.use("api/form",contactRoute)
+app.use("api/form", contactRoute);
 
 app.use(errorMiddleware);
 

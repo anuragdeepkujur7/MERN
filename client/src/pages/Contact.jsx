@@ -21,7 +21,6 @@ export const Contact = () => {
   // handle form getFormSubmissionInfo
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log(contact);
   };
 
@@ -42,7 +41,7 @@ export const Contact = () => {
 
           {/* contact form content actual  */}
           <section className="section-form">
-            <form onSubmit={handleSubmit}>    {/*we make handelsubmit and handleinput in last*/} 
+            <form onSubmit={handleSubmit}>    {/*we make handelsubmit and handleinput in last*/}  
               <div>
                 <label htmlFor="username">username</label>
                 <input
